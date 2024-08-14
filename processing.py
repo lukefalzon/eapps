@@ -87,4 +87,9 @@ concatenated_df = pd.concat([processed_df, raw_df], ignore_index=True)
 # Keep only unique rows based on the 'Name' column
 unique_df = concatenated_df.drop_duplicates(subset="case_number", keep="last")
 
+unique_df = unique_df.sort_values(
+    by=["application_year", "application_type", "application_number"],
+    ascending=[True, True, True],
+)
+
 unique_df.to_csv(processed_path, encoding="utf-8", index=False)
