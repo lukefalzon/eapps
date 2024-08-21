@@ -17,7 +17,7 @@ processed_df = pd.read_csv(processed_path)
 
 
 raw_df = raw_df.dropna(
-    subset=["case_status", "case_number", "architect", "applicant", "description"]
+    subset=["case_number", "architect", "applicant", "description"]
 )
 
 
